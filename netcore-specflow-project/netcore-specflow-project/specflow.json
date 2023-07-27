@@ -1,0 +1,12 @@
+﻿{
+  "stepAssemblies" : [
+    {
+      "assembly" : "Allure.SpecFlowPlugin"
+    }
+  ],
+  "CollectionBehavior": [
+    {
+      "DisableTestParallelization" : true
+    }
+  ]
+}
