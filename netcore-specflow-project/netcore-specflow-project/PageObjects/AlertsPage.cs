@@ -14,6 +14,12 @@ namespace netcore_specflow_project.PageObjects;
         }
 
         public IWebElement AlertButton => FindElementById("alertButton");
+        public IWebElement TimerAlertButton => FindElementById("timerAlertButton");
+        public IWebElement ConfirmAlertButton => FindElementById("confirmButton");
+        public IWebElement ConfirmResult => FindElementById("confirmResult");
+        public IWebElement PromptAlertButton => FindElementById("promtButton");
+        public IWebElement PromptResult => FindElementById("promptResult");
+        
         public void NavigateToAlertsPage()
         {
             _commonPage.NavigateTo("https://demoqa.com/alerts");

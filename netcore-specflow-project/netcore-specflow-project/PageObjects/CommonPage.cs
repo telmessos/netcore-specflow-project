@@ -11,16 +11,30 @@ public class CommonPage : Page
     public void NavigateTo(string url) => _driver.Navigate().GoToUrl(url);
     public string GetPageTitle()
     {
-        string PageTitle = _driver.Title;
         return _driver.Title;
     }
 
-    public string GetAlertText()
+    public string GetAlertText(bool dismiss = true)
     {
-        var Alert = _driver.SwitchTo().Alert();
-        string AlertText = Alert.Text;
-        Alert.Dismiss();
-        return AlertText;
+        var alert = _driver.SwitchTo().Alert();
+        string alertText = alert.Text;
+        if (dismiss)
+        {
+            alert.Dismiss();
+        }
+        return alertText;
+    }
+
+    public void SendStringToPrompt(string textToSend)
+    {
+        var alert = _driver.SwitchTo().Alert();
+        alert.SendKeys(textToSend);
+    }
+
+    public void AcceptAlert()
+    {
+        var alert = _driver.SwitchTo().Alert();
+        alert.Accept();
     }
 
     public bool IsAlertOpen()
