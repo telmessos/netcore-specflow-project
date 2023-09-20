@@ -29,7 +29,11 @@ namespace netcore_specflow_project.PageObjects;
             return _driver.FindElement(By.Id(IdText));
         }
 
-        
+        public IWebElement FindElementByCssSelector(string IdText)
+        {
+            Thread.Sleep(500);
+            return _driver.FindElement(By.CssSelector(IdText));
+        }
         
         public void LongSleep()
         {

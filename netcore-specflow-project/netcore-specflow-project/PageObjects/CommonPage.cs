@@ -49,4 +49,10 @@ public class CommonPage : Page
             return false; 
         }
     }
+
+    public void SendKeys(IWebElement elementToSendKeys, string textToSend)
+    {
+        elementToSendKeys.Clear();
+        elementToSendKeys.SendKeys(textToSend);
+    } 
 }
