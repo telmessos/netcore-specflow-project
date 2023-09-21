@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using netcore_specflow_project.Core;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace netcore_specflow_project.PageObjects;
@@ -19,19 +20,19 @@ namespace netcore_specflow_project.PageObjects;
 
         public IWebElement FindElementByXpath(string Xpath)
         {
-            Thread.Sleep(500);
+            Thread.Sleep(Configuration.delayMilliSeconds);
             return _driver.FindElement(By.XPath(Xpath));
         }
 
         public IWebElement FindElementById(string IdText)
         {
-            Thread.Sleep(500);
+            Thread.Sleep(Configuration.delayMilliSeconds);
             return _driver.FindElement(By.Id(IdText));
         }
 
         public IWebElement FindElementByCssSelector(string IdText)
         {
-            Thread.Sleep(500);
+            Thread.Sleep(Configuration.delayMilliSeconds);
             return _driver.FindElement(By.CssSelector(IdText));
         }
         

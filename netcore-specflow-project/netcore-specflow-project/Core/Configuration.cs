@@ -16,5 +16,6 @@ namespace netcore_specflow_project.Core;
         public static string BrowserName => InitConfiguration().GetSection("Configuration").GetSection("browser").Value;
         public static string BaseUrl => InitConfiguration().GetSection("Configuration").GetSection("baseUrl").Value;
         public static bool IsBrowserHeadless => bool.Parse(InitConfiguration().GetSection("Configuration").GetSection("headless").Value);
+        public static int delayMilliSeconds => int.Parse(InitConfiguration().GetSection("Configuration").GetSection("delayMilliSeconds").Value);
     }
 
